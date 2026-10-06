@@ -1,0 +1,10 @@
+{
+  "name": "video-limiter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension that limits daily video watching time across all tabs",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
