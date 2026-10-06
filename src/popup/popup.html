@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video Limiter</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Video Limiter</h1>
+
+    <section class="stats">
+      <div class="row"><span>Просмотрено сегодня</span><strong id="used">—</strong></div>
+      <div class="row"><span>Осталось</span><strong id="remaining">—</strong></div>
+      <div class="bar"><div id="progress"></div></div>
+      <p id="state" class="state"></p>
+    </section>
+
+    <form id="settings">
+      <label class="field">
+        <span>Дневной лимит, минут</span>
+        <input id="limit" type="number" min="1" max="1440" step="1" required />
+      </label>
+      <label class="toggle">
+        <input id="enabled" type="checkbox" />
+        <span>Блокировать видео после лимита</span>
+      </label>
+      <button type="submit">Сохранить</button>
+      <span id="saved" class="saved" hidden>Сохранено</span>
+    </form>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
