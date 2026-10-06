@@ -15,6 +15,8 @@ Chrome extension (Manifest V3) that tracks video watching time across all tabs a
 | `src/background.js` | Module service worker. Handles `tick` and `status` messages, persists usage, updates the badge. |
 | `src/content.js` | **Classic script** (content scripts can't use ES `import`). Detects playing videos, sends ticks, pauses videos and shows the overlay when blocked. |
 | `src/popup/` | Popup UI: today's usage and the settings form. Module script, imports from `src/lib/usage.js`. |
+| `icons/` | Extension icons, **generated**. Change `scripts/generate-icons.py` and re-run it rather than editing the PNGs. |
+| `scripts/generate-icons.py` | Stdlib-only Python icon renderer. |
 | `tests/` | `node:test` unit tests for `src/lib/usage.js`. |
 
 ## Data model
@@ -39,7 +41,8 @@ Chrome extension (Manifest V3) that tracks video watching time across all tabs a
 ## Commands
 
 ```bash
-npm test        # unit tests (node --test), Node 18+
+npm test                          # unit tests (node --test), Node 18+
+python3 scripts/generate-icons.py # regenerate icons/
 ```
 
 Manual check: load the repo folder via `chrome://extensions` → Load unpacked. Set the limit to 1 minute in the popup and play any video.
